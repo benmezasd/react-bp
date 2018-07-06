@@ -15,6 +15,7 @@ Repository to use to slap something together really fast with all dependencies n
 ##### Webpack
 - webpack - *Module bundler that bundles our project files for production*
 - webpack-cli - *To use webpack in the command line*
+- webpack-dev-server - *live reloading*
 
 ##### Babel
 - babel-core - *Transforms ES6 code to ES5*
@@ -28,12 +29,13 @@ Repository to use to slap something together really fast with all dependencies n
 - sass-loader - *Webpack helper to load sass files*
 - node-sass - *Needed by sass-loader*
 
-##### linting
+##### Linting
 - eslint - *AirBnB linting is used in this project*
   - all other eslint files were added after running `./node_modules/.bin/eslint --init`
 
+##### Testing
+- jest - *used for testing*
 
+##### Misc
 - html-webpack-plugin - *Webpack plugin generates an HTML file, injects script inside the HTML file and writes this file to dist/index.html*
 
-##### testing
-- jest - *used for testing*
