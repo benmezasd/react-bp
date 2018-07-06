@@ -39,3 +39,8 @@ Repository to use to slap something together really fast with all dependencies n
 ##### Misc
 - html-webpack-plugin - *Webpack plugin generates an HTML file, injects script inside the HTML file and writes this file to dist/index.html*
 
+### Stage 2
+#### Bootstrap 4 style
+
+#### Dependencies
+- bootstrap - *Introduced bootstrap 4*
