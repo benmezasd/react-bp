@@ -5,7 +5,7 @@ import './app.scss';
 const App = () => (
   <div>
     <div className="jumbotron">
-      <h1 className="display-2">React Boilerplate</h1>
+      <h1 className="display-2 blueish">React Boilerplate</h1>
       <h2 className="display-4">Stage 2</h2>
       <hr className="my-4" />
       <div className="lead">

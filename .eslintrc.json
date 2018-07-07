@@ -1,7 +1,9 @@
 {
     "extends": "airbnb",
     "env": {
-        "browser": true
+        "browser": true,
+        "jest": true,
+        "es6": true
     },
     "rules": {
         "react/jsx-one-expression-per-line": 0

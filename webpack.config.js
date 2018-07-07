@@ -1,12 +1,34 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const devMode = process.env.NODE_ENV !== 'production';
+
+const paths = {
+  DIST: path.resolve(__dirname, 'dist'),
+  SRC: path.resolve(__dirname, 'src'),
+};
 
 module.exports = {
-  entry: './src/index.jsx',
-  output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'index-bundle.js',
+  entry: './index.jsx',
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          chunks: 'initial',
+          test: path.resolve(__dirname, 'node_modules'),
+          name: 'vendor',
+          enforce: true,
+        },
+      },
+    },
   },
+  output: {
+    path: paths.DIST,
+    filename: '[name].[hash].js',
+    publicPath: '/',
+  },
+  devtool: 'eval-source-map',
   resolve: {
     extensions: ['.es6', '.js', '.jsx'],
     modules: ['node_modules'],
@@ -19,24 +41,29 @@ module.exports = {
         use: ['babel-loader'],
       },
       {
-        test: /\.scss$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: 'style-loader', // creates style nodes from JS strings
-          },
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-          },
-          {
-            loader: 'sass-loader', // compiles Sass to CSS
-          },
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
+        test: /\.(png|jpg|gif|ico)$/,
+        use: [
+          'file-loader',
         ],
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './index.html',
     }),
   ],
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+    historyApiFallback: true,
+  },
 };
