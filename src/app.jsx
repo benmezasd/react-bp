@@ -1,9 +1,10 @@
 import React from 'react';
-
+import Nav from './nav';
 import './app.scss';
 
 const App = () => (
   <div>
+    <Nav />
     <div className="jumbotron">
       <h1 className="display-2 blueish">React Boilerplate</h1>
       <h2 className="display-4">Stage 2</h2>
