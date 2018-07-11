@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import Home from './features/home';
-import Buttons from './features/buttons';
+import Buttons from './features/buttons/buttons';
 import Alerts from './features/alerts';
+import Badges from './features/badges';
 
 const About = () => (
   <div>
@@ -27,6 +28,12 @@ const BasicExample = () => (
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/buttons">Buttons</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/alerts">Alerts</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/badges">Badges</Link>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/about">About</Link>
@@ -60,6 +67,7 @@ const BasicExample = () => (
       <Route path="/topics" component={Topics} />
       <Route path="/buttons" component={Buttons} />
       <Route path="/alerts" component={Alerts} />
+      <Route path="/badges" component={Badges} />
     </div>
   </Router>
 );

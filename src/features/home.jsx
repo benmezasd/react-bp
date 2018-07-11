@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Buttons from './buttons';
+import Buttons from './buttons/buttons';
 import Alerts from './alerts';
+import Badges from './badges';
 
 const Home = () => (
   <div>
@@ -23,7 +23,7 @@ const Home = () => (
           <Alerts />
         </div>
         <div className="col">
-          <Link to="/buttons"><button type="button" className="btn btn-secondary btn-lg">Button</button></Link>
+          <Badges />
         </div>
       </div>
     </div>
